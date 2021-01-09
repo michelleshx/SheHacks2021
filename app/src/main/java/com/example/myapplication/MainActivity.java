@@ -58,12 +58,11 @@ public class MainActivity extends AppCompatActivity {
         readItems();
         itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
         lvItems.setAdapter(itemsAdapter);
-        items.add("First Item");
-        items.add("Second Item");
+//        items.add("First Item");
+//        items.add("Second Item");
 
         // Setup remove listener method call
         setupListViewListener();
-
     }
 
     private void setupListViewListener() {
@@ -76,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
                         // Refresh the adapter
                         itemsAdapter.notifyDataSetChanged();
                         writeItems();
-                        // Return true consumes the long click event (marks it handled)
                         return true;
                     }
                 });
@@ -89,4 +87,5 @@ public class MainActivity extends AppCompatActivity {
         etNewItem.setText("");
         writeItems();
     }
+
 }
